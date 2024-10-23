@@ -1,0 +1,620 @@
+/* Base Styles */
+body {
+  line-height: 1.6;
+  color: #fff;
+  background: #252525;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.stop {
+  overflow: hidden;
+}
+
+#page {
+  position: relative;
+  transition: 1s all ease-in-out;
+  width: 100%;
+}
+
+#page.menuopen {
+  opacity: 0.6;
+  filter: blur(1px);
+  transform: scale(1.1);
+}
+
+section {
+  display: flex;
+  width: 100%;
+  margin-right: 15px;
+  min-height: 100vh;
+  margin-top: 0px;
+  padding: 50px;
+  color: #fff;
+  position: relative;
+}
+
+section:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+}
+
+section h1 {
+  font-size: 120px;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+
+header {
+  z-index: 8999;
+  position: relative;
+}
+
+header #logo {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  margin-bottom: 10px;
+  opacity: 1;
+  z-index: 9;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
+}
+
+header {
+  z-index: 9999; /* Make sure it's on top of other elements */
+  display: block;
+  background-color: #252525; /* Solid background color */
+  color: white;
+  height: 97px;
+  text-align: left;
+  position: fixed; /* Keeps the header fixed on scroll */
+  top: 0; /* Stick to the top */
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+header nav {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed; /* Fixed position for the navbar */
+  left: 0;
+  height: 70px;
+  top: 0; /* Stick the navbar to the top of the page */
+  right: 0;
+  width: 100%; /* Make sure it spans the entire width */
+  background-color: #252525; /* Solid background so nothing is visible behind */
+  z-index: 9999; /* High z-index to stay on top of other elements */
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 400;
+  display: block;
+  padding: 10px 20px;
+  line-height: 1;
+  font-size: 25px;
+  letter-spacing: 2px;
+  transition: 0.1s all cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
+
+header nav a:hover {
+  font-size: 30px;
+  text-shadow: 0px 0px 10px black;
+}
+
+header nav button {
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+  transform: scale(0);
+}
+
+header nav button span {
+  width: 40%;
+  background: #fff;
+  height: 2px;
+  display: block;
+  margin: 5px auto;
+  transform: scalex(0);
+  transition: 0.6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0s, 0.3s margin ease-in 0s;
+}
+
+header nav button:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+header nav button:hover span {
+  margin: 10px auto;
+}
+
+header.sticky #logo {
+  top: 0;
+  transform: scale(0.8);
+  opacity: 0;
+  transition-delay: 0.1s;
+}
+
+header.sticky nav {
+  top: 20px;
+  padding: 0;
+  width: 90px;
+  height: 90px;
+  transition-delay: 0.5s;
+}
+
+header.sticky nav button {
+  transform: scale(1);
+  transition-delay: 0.6s;
+}
+
+header.sticky nav button span {
+  transform: scalex(1);
+  transition: 0.6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s, 0.3s margin ease-in 0s;
+}
+
+header.sticky nav a {
+  padding: 0;
+  opacity: 0;
+  letter-spacing: 0px;
+  transform: scale(0.3);
+  transition-delay: 0.2s;
+}
+
+/* login button */
+.animated-button {
+  position: fixed;
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #ffffff40;
+  box-shadow: 0 0 0 2px #ffffff20;
+  cursor: pointer;
+  overflow: hidden;
+  margin-top: 45px;
+  margin-right: 45px;
+  right: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.animated-button span:first-child {
+  position: relative;
+  z-index: 9;
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 5px #2195f360;
+  color: #ffffff;
+}
+
+.animated-button:active {
+  scale: 0.95;
+}
+
+.animated-button:hover span:last-child {
+  width: 150px;
+  height: 150px;
+  opacity: 1;
+}
+
+/* link buttons */
+.link1 {
+  margin-right: 510px;
+}
+
+.link2 {
+  margin-right: 400px;
+}
+
+.link3 {
+  margin-right: 300px;
+}
+
+.link4 {
+  margin-right: 200px;
+}
+
+button {
+  padding: 0;
+  margin-top: 56px;
+  right: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+button {
+  --primary-color: #c2c2c2;
+  --hovered-color: #ffffff;
+  position: fixed;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+button p::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+button:hover::after {
+  width: 100%;
+}
+
+button:hover p::before {
+  width: 100%;
+}
+
+button:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+button svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+/* link2 dropdown list */
+.link2 {
+  position: fixed;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  left: 0;
+  right: 0;
+  margin-top: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  color: #151515bc;
+  position: fixed;
+  z-index: 9;
+  padding: 10px;
+}
+
+.link2:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content ul li {
+  padding: 8px 16px;
+}
+
+.dropdown-content ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content ul li a:hover {
+  background-color: #ddd;
+}
+
+.hover-content {
+  width: 100%;
+  height: auto;
+}
+
+
+.list-1 {
+  padding: 20px;
+}
+
+.list-1 h4 {
+  color: grey;
+  font-size: 12px;
+  margin: 0;
+}
+
+.list-1 ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.list-1 ul li a:hover {
+  color: #f7f7f7;
+  background-color: #2195f300;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  z-index: 9;
+  opacity: 0;
+  transition: opacity 1.0s ease-in-out;
+}
+
+#overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+/* cards */
+.card {
+  width: 93%; /* Set width to 80% of the parent container */
+  height: auto; /* Height will be determined by content */
+  border-radius: 50px;
+  margin-top: 100px;
+  background: #6c6969;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+}
+
+/* package */
+.package {
+  width: 100%;
+  height: 871px;
+  background-image: linear-gradient(163deg, #ff00ff 0%, #3700ff 100%);
+  border-radius: 20px;
+  text-align: center;
+  z-index: 9;
+  transition: all 0.25s cubic-bezier(0, 0, 0, 1);
+}
+
+.package:hover {
+  box-shadow: 0px 0px 30px 1px rgba(204, 0, 255, 0.3);
+}
+
+.package2 {
+  width: 100%;
+  height: 841px;
+  background-color: #252525;
+  border-radius: 10px;
+  transition: all 0.25s cubic-bezier(0, 0, 0, 1);
+  box-shadow: 0px 0px 50px rgb(0, 0, 0);
+  padding: 15px;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.package2:hover {
+  transform: scale(0.98);
+  border-radius: 18px;
+}
+
+.text {
+  color: white;
+  font-size: 17px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+  header nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  header nav a {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  section h1 {
+    font-size: 60px; /* Further reduced size */
+  }
+
+  .animated-button {
+    padding: 8px 16px;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 16px; /* Further reduced font size */
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  header nav a {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  section h1 {
+    font-size: 80px; /* Reduced size */
+  }
+
+  .animated-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 18px; /* Reduced font size */
+  }
+}
+
+/* Large Devices (Laptops and Desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  section {
+    padding: 30px;
+  }
+
+  section h1 {
+    font-size: 100px; /* Adjusted size */
+  }
+
+  .animated-button {
+    padding: 12px 24px;
+    margin-top: 30px;
+    margin-right: 30px;
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 20px; /* Adjusted font size */
+  }
+}
+
+/* Extra Large Devices (Large Screens) */
+@media (min-width: 1201px) {
+  section {
+    padding: 40px;
+  }
+
+  section h1 {
+    font-size: 120px; /* Default size */
+  }
+
+  .animated-button {
+    padding: 14px 28px;
+    margin-top: 35px;
+    padding-left: 33px;
+    margin-right: 35px;
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 22px; /* Default font size */
+  }
+}
+.dropdown-content2 {
+  display: none;
+  right: 0;
+  
+  margin-top: 20px;
+  margin-right: 20px; 
+  background-color: rgb(255, 46, 46);
+  border-radius: 10px;
+  color: #151515bc;
+  position: fixed;
+  z-index: 9;
+  padding: 10px;
+}
+
+.link2:hover .dropdown-content2 {
+  display: block;
+}
+
+.dropdown-content2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content2 ul li {
+  padding: 8px 16px;
+}
+
+.dropdown-content2 ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content2 ul li a:hover {
+  background-color: #ddd;
+}
