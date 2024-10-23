@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Hub</title>
+    <link rel="stylesheet" href="../../assets/css/contenthub.css">
+</head>
+<body>
+    <header id="myHeader" class="">
+        <img src="../../assets/img/logo.png" alt="logo" id="logo">
+
+        <!-- onclick="window.location.href='/whatsapp/pages/settingspage/settings.html'" -->
+        <button class="animated-button">
+            <span><img src="../../assets/img/profile.png" alt="profilelogo" width="30px" height="30px"></span>
+            <div id="dropdown-content2" class="dropdown-content2">
+                <div class="hover-content2">
+                    <div class="logout">
+                        <ul>
+                            <li><a href="#">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span></span>
+        </button>
+
+        <button class="link1" onclick="location.href='../../php/views/sdashboard.php';">
+            <p>Home</p>
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg> -->
+        </button>
+    </header>
+
+
+    <div class="container">
+        <div id="files-list">
+            <!-- File cards will be dynamically injected here -->
+        </div>
+    
+        <button id="upload-button" onclick="document.getElementById('upload-input').click()">+</button>
+        <input type="file" id="upload-input" style="display: none;" onchange="uploadFile()">
+    
+        <div id="options-container" class="options-container">
+            <div id="options-content" class="options-content"></div>
+        </div>
+    </div>    
+
+    <script src="../../assets/js/contenthub.js"></script>
+</body>
+</html>

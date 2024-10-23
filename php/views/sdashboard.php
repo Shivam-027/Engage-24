@@ -20,7 +20,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'Student') {
 <body>
     <header id="myHeader" class="">
         <img src="../../assets/img/logo.png" alt="logo" id="logo">
-        <button class="animated-button link3" onclick="window.location.href=''" onclick="loginlist()">
+        <button class="animated-button link3" onclick="window.location.href='../../php/views/settings.php'" onclick="loginlist()">
             <span><img src="../../assets/img/profile.png" alt="profilelogo" width="30px" height="30px">
             </span>
             <div id="dropdown-content2" class="dropdown-content2">
@@ -59,12 +59,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'Student') {
                         </li>
                         <li><a href="../../php/views/quizpractice.html">Quiz Practice</a></li>
                         <li><a href="../../php/views/qapractice.html">Q/A Practice</a></li>
+                        <li><a href="../../php/views/contenthub.html">Content Hub</a></li>
+                        <li><a href="../../php/views/magicsearch.html">Magic Search</a></li>
                     </ul>
-
-
                 </div>
-
-
             </div>
         </div>
         <button class="link3" onclick="location.href='#review';">

@@ -8,7 +8,7 @@ session_start();
 
 <head>
 	<meta charset="UTF-8">
-	<title>EduBot Homepage</title>
+	<title>Educational Platform Homepage</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	<link rel="stylesheet" href="../../assets/css/homepage.css">
 </head>
@@ -43,7 +43,7 @@ session_start();
 	</header>
 	<div id="page" class="">
 		<section id="home">
-			<h1>EduBot.</h1>
+			<h1>Platform.</h1>
 		</section>
 		<section id="feature">
 			<h1>Features.</h1>
