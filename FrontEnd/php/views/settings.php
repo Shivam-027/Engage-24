@@ -15,13 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check which form was submitted
     if (isset($_POST['change_password'])) {
         // Include password change logic
-        include __DIR__ . '';
+        include __DIR__ . '/../../php/views/change_password.php';
     } elseif (isset($_POST['update_erp'])) {
         // Include ERP update logic
-        include __DIR__ . '';
+        include __DIR__ . '/../../php/views/update_erp.php';
     } elseif (isset($_POST['update_profile'])) {
         // Include profile update logic
-        include __DIR__ . '';
+        include __DIR__ . '/../../php/views/upload_profile_image.php';
     }
 }
 ?>

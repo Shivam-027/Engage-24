@@ -19,10 +19,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'Teacher') {
 
 <body>
     <header id="myHeader" class="">
-        <img src="../../assets/img/logo.png" alt="logo" id="logo">
-
-        <button class="animated-button" onclick="window.location.href='/studymitrr/php/views/settings.php'">
-
+    <img src="../../assets/img/logo.png" alt="logo" id="logo">
+    <button class="animated-button" onclick="window.location.href='../../php/views/settings.php'">
             <span>settings</span>
             <span></span>
         </button>
@@ -49,7 +47,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'Teacher') {
                         <li>
                             <h4>Explore Features</h4>
                         </li>
-                        <li><a href="#">Quiz Generator</a></li>
+                        <li><a href="../../php/views/tmagicsearch.html">Magic Search</a></li>
                     </ul>
                 </div>
             </div>

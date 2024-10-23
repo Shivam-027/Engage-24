@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Search</title>
+    <link rel="stylesheet" href="../../assets/css/magicsearch.css">
+</head>
+
+<body>
+    <header id="myHeader" class="">
+        <img src="../../assets/img/logo.png" alt="logo" id="logo">
+
+        <button class="animated-button">
+            <span><img src="../../assets/img/profile.png" alt="profilelogo" width="30px" height="30px"></span>
+            <div id="dropdown-content2" class="dropdown-content2">
+                <div class="hover-content2">
+                    <div class="logout">
+                        <ul>
+                            <li><a href="#">Log Out</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span></span>
+        </button>
+
+        <button class="link1" onclick="location.href='../../php/views/tdashboard.php';">
+            <p>Home</p>
+        </button>
+    </header>
+<div class="wrapper">
+    <div class="container box">
+        <div class="form-group">
+            <label for="query">Enter Search Query:</label>
+            <input type="text" id="query" placeholder="Enter a topic or file name">
+        </div>
+        <div class="form-group">
+            <label for="file-type">Select File Type:</label>
+            <select id="file-type">
+                <option value="pdf">PDF</option>
+                <option value="word">Word Document</option>
+                <option value="number">Excel</option>
+            </select>
+        </div>
+        <button  id="searchbtn" onclick="searchFiles()">Search</button>
+        <div id="result-container" class="result"></div>
+    </div>
+</div>
+
+    <script src="../../assets/js/magicsearch.js"></script>
+</body>
+
+</html>
