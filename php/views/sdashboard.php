@@ -57,6 +57,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'Student') {
                         <li>
                             <h4>Explore Features</h4>
                         </li>
+                        <li><a href="../../php/views/quizpractice.html">Quiz Practice</a></li>
+                        <li><a href="../../php/views/qapractice.html">Q/A Practice</a></li>
                     </ul>
 
 

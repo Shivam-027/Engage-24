@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question/Answers</title>
+    <link rel="stylesheet" href="../../assets/css/qapractice.css">
+</head>
+
+<body>
+    <header id="myHeader" class="">
+        <img src="../../assets/img/logo.png" alt="logo" id="logo">
+        <!-- onclick="window.location.href='/whatsapp/pages/settingspage/settings.html'" -->
+        <button class="animated-button">
+            <span><img src="../../assets/img/profile.png" alt="profilelogo" width="30px" height="30px"></span>
+            <div id="dropdown-content2" class="dropdown-content2">
+                <div class="hover-content2">
+                    <div class="logout">
+                        <ul>
+                            <li><a href="#">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <span></span>
+        </button>
+
+        <button class="link1" onclick="location.href='../../php/views/sdashboard.php';">
+            <p>Home</p>
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg> -->
+        </button>
+    </header>
+    <div class="wrapper">
+        <div class="container box">
+            <div class="form-group">
+                <label for="subject">Select Subject:</label>
+                <select id="subject">
+                    <option value="dsa">Data Structures and Algorithms</option>
+                    <option value="OS">Operating Systems</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="level">Select Level:</label>
+                <select id="level">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="num_questions">Number of Questions:</label>
+                <input type="number" id="num_questions" min="1" max="10">
+            </div>
+            <button id="getQuestionsButton" onclick="fetchQuestions()">Get Questions</button>
+            <div id="questions-container" class="questions-container">
+                <div id="question-text" class="question"></div>
+                <textarea id="user-answer" class="text-box"></textarea>
+                <button id="submitbtn" class="submitbtn" onclick="submitAnswer()">Submit</button>
+                <div id="result" class="result"></div>
+                <div class="nav-buttons">
+                    <button id="previousQuestionButton" class="hidden" onclick="previousQuestion()">Previous</button>
+                    <button id="nextQuestionButton" class="hidden " onclick="nextQuestion()">Next</button>
+                    <button id="refreshQuestionsButton" class="hidden " onclick="refreshQuestions()">Refresh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/qapractice.js"></script>
+</body>
+
+</html>
